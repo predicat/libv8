@@ -53,9 +53,9 @@ module Libv8
       # at the head of PATH. That way all commands that inherit this environment
       # will use ./python -> python2
       if python_version !~ /^2/
-        unless system 'which python2 2>&1 > /dev/null'
-          fail "libv8 requires python 2 to be installed in order to build, but it is currently #{python_version}"
-        end
+        #unless system 'which python2 2>&1 > /dev/null'
+        #  fail "libv8 requires python 2 to be installed in order to build, but it is currently #{python_version}"
+        #end
         `ln -fs #{`which python2`.chomp} python`
         ENV['PATH'] = "#{File.expand_path '.'}:#{ENV['PATH']}"
       end
