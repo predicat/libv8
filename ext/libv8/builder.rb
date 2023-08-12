@@ -96,7 +96,7 @@ module Libv8
     private
 
     def python_version
-      if system 'which python 2>&1 > /dev/null'
+      if system 'which python'
         `python -c "import platform; print(platform.python_version())"`.chomp
       else
         "not available"
